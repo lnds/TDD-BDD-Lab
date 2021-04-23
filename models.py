@@ -1,4 +1,6 @@
-from main import db
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 Base = db.Model
 
@@ -6,13 +8,15 @@ class Author(Base):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(80))
 
+  def __repr__(self):
+    return self.name
 
 class Book(Base):
   id = db.Column(db.Integer, primary_key=True)
   title = db.Column(db.String(100))
   price = db.Column(db.Integer)
   stock = db.Column(db.Integer)
-  imagen = db.Column(db.String(100))
+  image = db.Column(db.String(100))
 
   author_id = db.Column(db.Integer, db.ForeignKey('author.id'))
   author = db.relationship("Author", backref=db.backref("books", lazy=True))
@@ -24,9 +28,9 @@ def init_db():
   db.session.add(shakespeare)
   cervantes = Author(name="Miguel De Cervantes")
   db.session.add(cervantes)
-  hamlet = Book(title="Hamlet", price=2000, stock=10, author=shakespeare, imagen='hamlet.jpg')
+  hamlet = Book(title="Hamlet", price=2000, stock=10, author=shakespeare, image='hamlet.jpg')
   db.session.add(hamlet)
-  quijote = Book(title="El Quijote de la Mancha", price=3000, stock=20, author=cervantes, imagen='elquijote.jpg')
+  quijote = Book(title="El Quijote de la Mancha", price=3000, stock=20, author=cervantes, image='elquijote.jpg')
   db.session.add(quijote)
   db.session.commit()
 

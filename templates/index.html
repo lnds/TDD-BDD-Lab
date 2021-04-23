@@ -1,12 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
   <h1>{% block title %} Tienda de Libros {% endblock %}</h1>
-  {% for book in books %}
-     <a href="#">
-       <h2>{{ book['title'] }}</h2>
+  <table class="table table-hovered">
+    <thead>
+      <tr>
+        <th>Libro</th>
+        <th>Precio</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for book in books %}
+     <tr>
+       <td>
+         <a href="{{ url_for('detail', book_id=book['id']) }}">{{ book['title'] }}</a>
+       </td>
+       <td class="text-right">
+         $ {{ book['price']}}
+       </td>
+       <td class="text-right">
+         {{ book['stock']}}
+       </td>
      </a>
      <hr>
-  {% endfor %}
+    {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
 {% block menu %} 
 {% endblock %}

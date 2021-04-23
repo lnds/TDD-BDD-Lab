@@ -56,6 +56,17 @@ SQLAlchemy = ">=0.8.0"
 
 [[package]]
 category = "main"
+description = "Unit testing for Flask"
+name = "flask-testing"
+optional = false
+python-versions = "*"
+version = "0.8.1"
+
+[package.dependencies]
+Flask = "*"
+
+[[package]]
+category = "main"
 description = "Lightweight in-process concurrent programming"
 marker = "python_version >= \"3\""
 name = "greenlet"
@@ -174,7 +185,7 @@ dev = ["pytest", "pytest-timeout", "coverage", "tox", "sphinx", "pallets-sphinx-
 watchdog = ["watchdog"]
 
 [metadata]
-content-hash = "b6a8af80e260e3c0d4508a4a09fb5198fd4b7b6fba8b857df81050d01b6173db"
+content-hash = "0cae017e369a588e6ccdab375b9deda666400c3695c495bd04ed616fdf443bae"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -193,6 +204,9 @@ flask = [
 flask-sqlalchemy = [
     {file = "Flask-SQLAlchemy-2.5.1.tar.gz", hash = "sha256:2bda44b43e7cacb15d4e05ff3cc1f8bc97936cc464623424102bfc2c35e95912"},
     {file = "Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl", hash = "sha256:f12c3d4cc5cc7fdcc148b9527ea05671718c3ea45d50c7e732cceb33f574b390"},
+]
+flask-testing = [
+    {file = "Flask-Testing-0.8.1.tar.gz", hash = "sha256:0a734d7b68e63a9410b413cd7b1f96456f9a858bd09a6222d465650cc782eb01"},
 ]
 greenlet = [
     {file = "greenlet-1.0.0-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:1d1d4473ecb1c1d31ce8fd8d91e4da1b1f64d425c1dc965edc4ed2a63cfa67b2"},
