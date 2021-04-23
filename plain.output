@@ -1,0 +1,17 @@
+Característica: índice
+
+  Escenario: cargar pagina inicial
+    Dado hemos accedido a la aplicación ... passed in 0.000s
+    Cuando carguemos la pagina / ... passed in 0.035s
+    Entonces aparece el título "Tienda de Libros" ... passed in 0.000s
+
+  Esquema del escenario: libros presentes -- @1.1 libros
+    Dado hemos accedido a la aplicación ... passed in 0.000s
+    Cuando carguemos la pagina / ... passed in 0.004s
+    Entonces aparece el libro Hamlet ... passed in 0.000s
+
+  Esquema del escenario: libros presentes -- @1.2 libros
+    Dado hemos accedido a la aplicación ... passed in 0.000s
+    Cuando carguemos la pagina / ... passed in 0.003s
+    Entonces aparece el libro El Quijote de la Mancha ... passed in 0.000s
+
