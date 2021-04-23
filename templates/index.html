@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>{% block title %} Tienda de Libros {% endblock %}</h1>
+  {% for book in books %}
+     <a href="{{ url_for('book', book_id=book['id']) }}">
+       <h2>{{ book['title'] }}</h2>
+     </a>
+     <hr>
+  {% endfor %}
+{% endblock %}
+{% block menu %} 
+{% endblock %}
