@@ -12,7 +12,7 @@ class DatabaseTestCase(TestCase):
    return create_app(self)
 
   def setUp(self):
-    db.create_all
+    db.create_all()
 
   def tearDown(self):
     db.session.remove()

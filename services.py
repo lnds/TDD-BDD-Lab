@@ -27,4 +27,4 @@ def create_book(title: str, author_name: str, price: int, stock: int) -> Optiona
 If cantity > stock return None
 """
 def purchase_book(book: Book, cantity: int) -> Optional[Book]:
-  return Book()  
+  return Book()
