@@ -12,7 +12,7 @@ class DatabaseTestCase(TestCase):
    return create_app(self)
 
   def setUp(self):
-    db.create_all()
+    init_db()
 
   def tearDown(self):
     db.session.remove()
@@ -31,16 +31,24 @@ class ServiceTests(DatabaseTestCase):
     assert book is None
     book = find_book("Hamlet")
     assert book
-    assert book.author.name == "Shakespeare"
+    assert book.author.name == "William Shakespeare"
 
 
   def test_book_creation(self):
-    author = create_book(title="Odisea", author_name="Homero", price=1000, stock=100)
-    assert author.id
+    book = create_book(title="Odisea", author_name="Homero", price=1000, stock=100)
+    assert book
+    assert book.price == 1000
+    assert book.stock == 100
 
   def test_book_purchase(self):
-    author = find_book(title="Hamlet")
-    assert author.id
+    book = find_book(title="Hamlet")
+    assert book
+    stock = book.stock
+    book = purchase_book(book, 1)
+    assert book
+    assert book.stock and book.stock < stock
+    book = purchase_book(book, stock+1)
+    assert book is None
 
 
 if __name__ == '__main__':
