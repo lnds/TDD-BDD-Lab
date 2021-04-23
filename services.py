@@ -1,22 +1,30 @@
 from models import *
+from typing import Optional
 
+"""
+  Return None if book not found
+"""
+def find_book(title: str) -> Optional[Book]:
+  return Book()
 
-class AuthorNotFound(Exception):
-  pass
-
-class BookNotFound(Exception):
-  pass
-
-  
+"""
+If author already exists return author from database
+"""
 def create_author(name: str) -> Author:
-  return None 
+  author = Author(name=name)
+  return author
 
 """ 
 Find author by name, then create Book
-Raise exception if author is not found
+Return None if author not found
+If book already exists return that book
 """
-def create_book(title: str, author_name: name, price: int, stock: int) -> Book:
-  return None
+def create_book(title: str, author_name: str, price: int, stock: int) -> Optional[Book]:
+  return Book()
 
-def purchase_book(title: str, cantity: int) -> Book:
-  return None  
+
+"""
+If cantity > stock return None
+"""
+def purchase_book(book: Book, cantity: int) -> Optional[Book]:
+  return Book()  

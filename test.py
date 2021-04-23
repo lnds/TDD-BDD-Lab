@@ -23,15 +23,24 @@ class ServiceTests(DatabaseTestCase):
 
   def test_author_creation(self):
     author = create_author(name="Homero")
-    assert author.id > 0
+    assert author.id
+    assert author.name == "Homero"
+
+  def test_find_book(self):
+    book = find_book("Iliada")
+    assert book is None
+    book = find_book("Hamlet")
+    assert book
+    assert book.author.name == "Shakespeare"
+
 
   def test_book_creation(self):
-    author = create_book(name="Homero")
-    assert author.id > 0
+    author = create_book(title="Odisea", author_name="Homero", price=1000, stock=100)
+    assert author.id
 
   def test_book_purchase(self):
-    author = create_author(name="Homero")
-    assert author.id > 0
+    author = find_book(title="Hamlet")
+    assert author.id
 
 
 if __name__ == '__main__':
