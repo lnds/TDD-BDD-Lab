@@ -3,3 +3,4 @@ SQLAlchemy==1.4.11
 Flask-SQLAlchemy==2.5.1
 behave==1.2.6
 Flask-Testing==0.8.1
+gunicorn==20.0.4
