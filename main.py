@@ -2,9 +2,7 @@ from flask import Flask
 from flask import render_template
 
 def create_app(config):
-  print('creando app')
   app = Flask(__name__)
-  print(app)
   app.config.from_object(config)
   from models import db
   db.init_app(app)
