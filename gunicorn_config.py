@@ -1,2 +1,4 @@
-bind = "0.0.0.0:8080"
+import os
+port = os.environ['PORT']
+bind = f"0.0.0.0:{port}"
 workers = 2
