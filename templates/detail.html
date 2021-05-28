@@ -4,5 +4,6 @@
     <h2>{% block title %} {{ book['title'] }} {% endblock %}</h2>
     <span class="badge badge-primary">{{ book['created'] }}</span>
     <p><strong>Author:</strong>{{ book['author'] }}</p>
+    <p><strong>Stock:</strong>{{ book['stock']}}</p>
     <p><img src="{{ url_for('static', filename=book['image']) }}"></p>
 {% endblock %}
